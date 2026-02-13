@@ -3,8 +3,8 @@ import { LinkItem } from './types';
 
 export const DOCTOR_NAME = "Dra. Bianca Amaral Fernandes";
 export const CLINIC_NAME = "Espaço Mindcare";
-export const CRM = "CRM/SP 123456"; // Placeholder CRM, user should update
-export const RQE = "RQE 0000"; // Placeholder RQE
+export const CRM = "CRM SP 247.077 | PR 53.736";
+export const RQE = ""; // Limpar placeholder se não houver RQE específico no momento
 
 export const SOCIAL_URLS = {
   whatsapp: "https://api.whatsapp.com/send/?phone=5518997527188&text&type=phone_number&app_absent=0",

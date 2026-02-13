@@ -45,6 +45,7 @@ export const About: React.FC = () => {
                     <div>
                       <span className="text-[10px] text-slate-400 block uppercase font-black tracking-widest">Inscrição Profissional</span>
                       <span className="text-slate-900 font-bold tracking-tight">{CRM}</span>
+                      {RQE && <span className="text-slate-500 text-xs ml-2">| {RQE}</span>}
                     </div>
                   </div>
                 </div>

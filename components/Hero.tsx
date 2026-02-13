@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Sparkles, Quote } from 'lucide-react';
- import { DOCTOR_NAME, PLACEHOLDER_AVATAR, SOCIAL_URLS } from '../constants';
+ import { DOCTOR_NAME, CRM, PLACEHOLDER_AVATAR, SOCIAL_URLS } from '../constants';
 import { getRandomInsight } from '../utils/insights';
 
 export const Hero: React.FC = () => {
@@ -50,6 +50,9 @@ export const Hero: React.FC = () => {
             
             <p className="text-base md:text-xl text-slate-800 lg:text-slate-600 max-w-xl leading-relaxed font-medium drop-shadow-sm lg:drop-shadow-none">
               Bem-vindo ao {DOCTOR_NAME}. Um refúgio de acolhimento onde a ciência e a humanidade se unem para restaurar seu equilíbrio.
+            </p>
+            <p className="text-[10px] font-black text-brand-600 uppercase tracking-[0.2em] mt-4 opacity-70">
+              {CRM}
             </p>
 
             {/* AI Insight - Editorial Style - Hidden on Mobile */}
