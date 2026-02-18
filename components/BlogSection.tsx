@@ -52,6 +52,8 @@ export const BlogSection: React.FC = () => {
                   src={post.image} 
                   alt={post.title} 
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 grayscale-[0.2] group-hover:grayscale-0"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
                 <div className="absolute top-6 left-6">

@@ -33,6 +33,7 @@ export const Header: React.FC = () => {
     <nav className={`fixed top-0 z-50 w-full transition-all duration-500 ${
       scrolled ? 'bg-white/80 backdrop-blur-xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border-b border-slate-100' : 'bg-transparent'
     }`}>
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:bg-white focus:text-slate-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg text-xs font-bold uppercase tracking-widest">Pular para conteúdo</a>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <Link to="/" className="flex items-center gap-3 group">

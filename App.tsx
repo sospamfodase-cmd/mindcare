@@ -32,7 +32,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
+        <div id="main" className="min-h-screen bg-slate-50 text-slate-900 font-sans">
           <Toaster position="top-right" />
           <Routes>
             <Route path="/" element={<HomePage />} />

@@ -20,6 +20,11 @@ export const Hero: React.FC = () => {
             src="/images/hero-banner.png" 
             alt="Dra. Bianca Amaral Fernandes" 
             className="w-full h-full object-cover object-center lg:object-[center_20%] transition-transform duration-1000"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            width="1920"
+            height="1080"
           />
         </picture>
         {/* Editorial Overlays */}
@@ -35,9 +40,9 @@ export const Hero: React.FC = () => {
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full h-full flex flex-col justify-between pt-24 pb-10 lg:py-0">
-        <div className="w-full lg:w-3/5 xl:w-1/2 flex flex-col h-full justify-between">
+        <div className="w-full lg:w-3/5 xl:w-1/2 flex flex-col h-full justify-between lg:justify-start lg:gap-10">
           {/* Text Content - Positioned as high as possible on mobile */}
-          <div className="text-left">
+          <div className="text-left lg:mt-[16vh]">
             <div className="inline-flex items-center gap-3 mb-4 px-1">
               <div className="w-12 h-[1px] bg-brand-400"></div>
               <span className="text-xs font-black text-brand-600 uppercase tracking-[0.3em]">Medicina Integrativa</span>
@@ -69,7 +74,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Buttons - Positioned as low as possible on mobile */}
-          <div className="flex flex-col sm:flex-row items-center gap-3 mt-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-3 mt-auto lg:mt-6 lg:mb-auto">
             <a 
               href={SOCIAL_URLS.whatsapp}
               target="_blank"
