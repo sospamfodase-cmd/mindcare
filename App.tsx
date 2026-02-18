@@ -7,7 +7,6 @@ import { BlogPage } from './pages/BlogPage';
 import { LoginPage } from './pages/LoginPage';
 import { AdminDashboard } from './pages/AdminDashboard';
 import { ArticlePage } from './pages/ArticlePage';
-import { initDatabase } from '@/src/lib/db';
 
 // Protected Route Component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -25,10 +24,6 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
 };
 
 function App() {
-  React.useEffect(() => {
-    initDatabase().catch(console.error);
-  }, []);
-
   return (
     <AuthProvider>
       <Router>

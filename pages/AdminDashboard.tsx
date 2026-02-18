@@ -8,6 +8,7 @@ import { Plus, Edit2, Trash2, LogOut, Save, X, Image as ImageIcon, FileText, Upl
 import toast from 'react-hot-toast';
 import { resizeImage } from '../src/utils/imageOptimizer';
 import { compressData } from '../src/utils/compression';
+import { initDatabase } from '@/src/lib/db';
 
 export const AdminDashboard: React.FC = () => {
   const { user, logout } = useAuth();
@@ -24,18 +25,19 @@ export const AdminDashboard: React.FC = () => {
   const [resendKey, setResendKey] = useState(() => import.meta.env.VITE_RESEND_API_KEY || localStorage.getItem('RESEND_API_KEY') || '');
   const [sending, setSending] = useState(false);
 
-  // Load posts
+  // Initialize DB and load posts (only para área admin)
   useEffect(() => {
-    const fetchPosts = async () => {
+    const bootstrap = async () => {
       try {
+        await initDatabase();
         const allPosts = await blogService.getAllPosts();
         setPosts(allPosts || []);
       } catch (err) {
-        console.error('Error fetching posts:', err);
-        toast.error('Erro ao carregar artigos. Verifique sua conexão ou banco de dados.');
+        console.error('Error initializing admin data:', err);
+        toast.error('Erro ao carregar artigos ou inicializar banco de dados.');
       }
     };
-    fetchPosts();
+    bootstrap();
   }, []);
 
   // Load subscribers when tab changes
