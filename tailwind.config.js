@@ -46,8 +46,9 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        // Use system fonts to evitar downloads de woff2 na cadeia crítica
+        sans: ['system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        serif: ['Georgia', 'Times New Roman', 'serif'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

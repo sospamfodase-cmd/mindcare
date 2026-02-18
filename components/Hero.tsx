@@ -25,6 +25,7 @@ export const Hero: React.FC = () => {
             fetchpriority="high"
             width="1920"
             height="1080"
+            sizes="(max-width: 768px) 100vw, 100vw"
           />
         </picture>
         {/* Editorial Overlays */}

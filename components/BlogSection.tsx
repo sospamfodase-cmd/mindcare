@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Calendar, ArrowRight, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { blogService } from '../services/blogService';
@@ -6,18 +6,36 @@ import { BlogPost } from '../types';
 
 export const BlogSection: React.FC = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [hasFetched, setHasFetched] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
+  // Lazy fetch: somente quando a seção entrar em viewport
   useEffect(() => {
-    // Get latest 3 posts
-    const fetchPosts = async () => {
-      const allPosts = await blogService.getAllPosts();
-      setPosts(allPosts.slice(0, 3));
-    };
-    fetchPosts();
-  }, []);
+    const el = sectionRef.current;
+    if (!el || hasFetched) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(async (entry) => {
+          if (entry.isIntersecting && !hasFetched) {
+            try {
+              const allPosts = await blogService.getAllPosts();
+              setPosts(allPosts.slice(0, 3));
+              setHasFetched(true);
+              observer.disconnect();
+            } catch (e) {
+              // Silenciar erros aqui para não impactar LCP
+            }
+          }
+        });
+      },
+      { rootMargin: '200px 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [hasFetched]);
 
   return (
-    <section id="blog" className="py-32 bg-slate-50 relative scroll-mt-28 overflow-hidden">
+    <section ref={sectionRef as any} id="blog" className="py-32 bg-slate-50 relative scroll-mt-28 overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
       

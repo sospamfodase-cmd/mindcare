@@ -38,7 +38,15 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between h-24">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative overflow-hidden w-10 h-10 flex items-center justify-center bg-transparent rounded-xl transition-transform duration-500 group-hover:rotate-12">
-              <img src="/images/4.png" alt="Logo" className="w-full h-full object-contain" />
+              <img 
+                src="/images/4.png" 
+                alt="Logo" 
+                className="w-full h-full object-contain" 
+                width={40} 
+                height={40} 
+                loading="lazy" 
+                decoding="async"
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-black tracking-widest text-slate-900 leading-none uppercase">{CLINIC_NAME}</span>
