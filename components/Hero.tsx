@@ -49,15 +49,15 @@ export const Hero: React.FC = () => {
               <span className="text-xs font-black text-brand-600 uppercase tracking-[0.3em]">Medicina Integrativa</span>
             </div>
             
-            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-serif text-slate-900 leading-[0.9] tracking-tighter mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-8xl font-serif text-slate-900 leading-[0.95] tracking-tighter mb-4 sm:mb-6">
               Cuidado que <br/>
               <span className="italic font-normal text-brand-700">transforma.</span>
             </h1>
             
-            <p className="text-base md:text-xl text-slate-800 lg:text-slate-600 max-w-xl leading-relaxed font-medium drop-shadow-sm lg:drop-shadow-none">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-800 lg:text-slate-600 max-w-xl leading-relaxed font-medium drop-shadow-sm lg:drop-shadow-none">
               Bem-vindo ao {DOCTOR_NAME}. Um refúgio de acolhimento onde a ciência e a humanidade se unem para restaurar seu equilíbrio.
             </p>
-            <p className="text-[10px] font-black text-brand-600 uppercase tracking-[0.2em] mt-4 opacity-70">
+            <p className="text-[9px] sm:text-[10px] font-black text-brand-600 uppercase tracking-[0.2em] mt-3 sm:mt-4 opacity-70">
               {CRM}
             </p>
 
